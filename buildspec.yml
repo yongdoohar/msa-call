@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    _PROJECT_NAME: "user05-order"
+    _PROJECT_NAME: "user12-call"
 
 phases:
   install:
