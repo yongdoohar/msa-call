@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Date;
 
-@FeignClient(name="payment", url="http://payment:8080")
+@FeignClient(name="payment", url="http://user12-payment:8080")
 public interface PaymentInformationService {
     @RequestMapping(method= RequestMethod.GET, path="/paymentInformations")
     public void paymentRequest(@RequestBody PaymentInformation paymentInformation);
