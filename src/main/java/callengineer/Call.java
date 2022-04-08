@@ -6,11 +6,12 @@ import java.util.List;
 
 
 @Entity
-@Table(name="Call_table")
+@Table(name = "Call_table")
 public class Call  {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    // @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private Long engineerId;
@@ -24,6 +25,7 @@ public class Call  {
     public void onPostPersist(){
         CallRequested callRequested = new CallRequested();
         BeanUtils.copyProperties(this, callRequested);
+        System.out.println("\n\n##### callRequested.toJson() : " + callRequested.toJson() + "\n\n");
         callRequested.publishAfterCommit();
 
         //Following code causes dependency to external APIs
