@@ -42,6 +42,11 @@ server:
 
 spring:
   profiles: docker
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
   cloud:
     stream:
       kafka:
@@ -63,3 +68,7 @@ spring:
         event-out:
           destination: callengineer
           contentType: application/json
+logging:
+  level:
+    org.hibernate.type: trace
+    org.springframework.cloud: debug

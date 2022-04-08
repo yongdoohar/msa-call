@@ -30,6 +30,8 @@ public class Call  {
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
 
         callengineer.external.PaymentInformation paymentInformation = new callengineer.external.PaymentInformation();
+        System.out.println("callRequested.getId()   " + callRequested.getId());
+        System.out.println("this.getId()   " + this.getId());
         paymentInformation.setCallId(callRequested.getId());
         paymentInformation.setStatus("1");
         // mappings goes here
