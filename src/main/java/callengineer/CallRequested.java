@@ -15,21 +15,21 @@ public class CallRequested extends AbstractEvent {
         return id;
     }
 
-    public void setId(Long Id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public Long getEngineerId() {
         return engineerId;
     }
 
-    public void setEngineerId(Long EngineerId) {
+    public void setEngineerId(Long engineerId) {
         this.engineerId = engineerId;
     }
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String Address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 }

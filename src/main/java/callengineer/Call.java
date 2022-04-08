@@ -10,16 +10,11 @@ import java.util.List;
 public class Call  {
 
     @Id
-    // @GeneratedValue(strategy = GenerationType.AUTO)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private Long engineerId;
-
     private String address;
-
     private String engineerStatus;
-
 
     @PostPersist
     public void onPostPersist(){
