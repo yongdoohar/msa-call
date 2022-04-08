@@ -5,11 +5,11 @@ server:
 
 spring:
   profiles: default
-  # jpa:
-  #   properties:
-  #     hibernate:
-  #       show_sql: true
-  #       format_sql: true
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
   cloud:
     stream:
       kafka:
@@ -31,20 +31,20 @@ spring:
         event-out:
           destination: callengineer
           contentType: application/json
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    password: test
-    url: jdbc:mysql://localhost:3306/calldb?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    username: root
-  jpa:
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-    # generate-ddl: true
-    show-sql: true
-    hibernate:
-      show_sql: true
-      ormat_sql: true
-      ddl-auto: create
+  # datasource:
+  #   driver-class-name: com.mysql.cj.jdbc.Driver
+  #   password: test
+  #   url: jdbc:mysql://localhost:3306/calldb?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true
+  #   username: root
+  # jpa:
+  #   database: mysql
+  #   database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  #   # generate-ddl: true
+  #   show-sql: true
+  #   hibernate:
+  #     show_sql: true
+  #     ormat_sql: true
+  #     ddl-auto: create
 
 logging:
   level:
