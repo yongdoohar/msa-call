@@ -30,15 +30,21 @@ public class Call  {
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
 
         callengineer.external.PaymentInformation paymentInformation = new callengineer.external.PaymentInformation();
-        System.out.println("callRequested.getId()   " + callRequested.getId());
-        System.out.println("this.getId()   " + this.getId());
-        paymentInformation.setCallId(callRequested.getId());
+
+        paymentInformation.setCallId(this.getId());
         paymentInformation.setStatus("1");
         // mappings goes here
         CallApplication.applicationContext.getBean(callengineer.external.PaymentInformationService.class)
             .paymentRequest(paymentInformation);
 
+    }
+
+    @PostUpdate
+    public void onPostUpdate(){
         CallRequestCanceled callRequestCanceled = new CallRequestCanceled();
+
+        callRequestCanceled.setEngineerId(this.getEngineerId());
+        callRequestCanceled.setStatus("0");
         BeanUtils.copyProperties(this, callRequestCanceled);
         callRequestCanceled.publishAfterCommit();
 
