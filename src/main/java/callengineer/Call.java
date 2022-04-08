@@ -44,7 +44,6 @@ public class Call  {
         CallRequestCanceled callRequestCanceled = new CallRequestCanceled();
 
         callRequestCanceled.setEngineerId(this.getEngineerId());
-        callRequestCanceled.setStatus("0");
         BeanUtils.copyProperties(this, callRequestCanceled);
         callRequestCanceled.publishAfterCommit();
 
